@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/虚函数与多态/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/05/虚函数与多态/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘理铖">
@@ -308,8 +308,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/04/虚函数与多态/" itemprop="url">
-                  未命名
+                <a class="post-title-link" href="/2018/09/05/虚函数与多态/" itemprop="url">
+                  虚函数与多态
                 </a>
               
             
@@ -335,24 +335,12 @@
                 
               
 
-              <time title="创建时间：2018-09-04 15:11:04" itemprop="dateCreated datePublished" datetime="2018-09-04T15:11:04+08:00">2018-09-04</time>
+              <time title="创建时间：2018-09-05 11:01:47 / 修改时间：11:10:09" itemprop="dateCreated datePublished" datetime="2018-09-05T11:01:47+08:00">2018-09-05</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-09-05 10:53:31" itemprop="dateModified" datetime="2018-09-05T10:53:31+08:00">2018-09-05</time>
               
             
           </span>
@@ -389,9 +377,9 @@
           
             <h1 id="虚函数与多态"><a href="#虚函数与多态" class="headerlink" title="虚函数与多态"></a>虚函数与多态</h1><p>多态（<em>polymorphism</em>)一词源自希腊语，意为多种形态，多种形状。</p>
 <p>举个例子，同样的一个求面积公式，对正方形而言，其形式为边长^2^；对圆而言，其形式为&pi;半径^2^。“求面积”这一动作，在不同的几何体上有不同的形态。这就是我理解的多态。</p>
-<p>譬如，有一个名叫Shape的类，分别派生出<code>Rectangle</code>类以及<code>Triangle</code>类。</p>
+<p>譬如，有一个名叫<code>Shape</code>的类，分别派生出<code>Rectangle</code>类以及<code>Triangle</code>类。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Shape</span> &#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">area</span><span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Parent class area :"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span>:</span> <span class="keyword">public</span> Shape&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">area</span><span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Rectangle class area :"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Triangle</span>:</span> <span class="keyword">public</span> Shape&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">area</span> <span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123; </span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Triangle class area :"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>可以看到它们各自都有一个<code>area()</code>函数。该函数的函数体是<strong>不同</strong>的。可以看到，在这个时候，我们还没有非要使用虚函数的必要。</p>
+<p>可以看到它们各自都有一个<code>area()</code>函数。这些函数的函数体是<strong>不同</strong>的。在这个时候，我们仍然没有使用虚函数的必要。</p>
 <h2 id="为什么非要虚函数"><a href="#为什么非要虚函数" class="headerlink" title="为什么非要虚函数"></a>为什么非要虚函数</h2><p>可是，假如我们有这样一个需求。我们需要一个数组，一个可以同时容纳<code>Rectangle</code>以及<code>Triangle</code>的数组，我们该怎么办？无论是<code>vector</code>还是C中的数组，都要求元素类型相同。所以，换一种思路，我们可以容纳<code>Shape</code>的指针。这样，通过指针指向具体的派生类就可以间接实现我们的目标。看上去很完美。但是倘若我们要计算数组内几何体的面积，我们该怎么办？我们只有一系列的<code>Shape</code>指针，我们不知道这些指针是指向<code>Rectangle</code>还是<code>Triangle</code>，如果我们直接通过<code>Shape</code>指针调用<code>area()</code>,尴尬的地方在于它只会调用<code>Shape</code>类的<code>area()</code>。这是因为编译器想当然地认为<code>Shape</code>指针指向的肯定是<code>Shape</code>类，所以自然而然地就会调用<code>Shape</code>类的<code>area()</code>。</p>
 <p>这个时候，虚函数粉墨登场了。只需要在<code>Shape</code>类中的<code>area()</code>函数定义之前加上<code>virtual</code>关键字，<code>area()</code>就成为了虚函数。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Shape</span> &#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">area</span><span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Parent class area :"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -399,11 +387,11 @@
 <h2 id="虚函数的实现机制"><a href="#虚函数的实现机制" class="headerlink" title="虚函数的实现机制"></a>虚函数的实现机制</h2><p>在C++中，虚函数的实现机制是虚函数表以及虚指针。</p>
 <p>具体而言，每一个拥有虚函数的类及其子类都有一张虚函数表，该虚函数表为该些类通用；每一个该些类的对象都一个虚指针指向这张表，该虚指针为该对象独有。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">g</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">h</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> a</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> :</span> <span class="keyword">public</span> A</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">g</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> b;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>因为<code>class A</code>是有虚函数的，所以编译器为其准备了一张虚函数表vtableA。由于<code>h()</code>不是虚函数，所以不在表内。</p>
+<p>因为<code>class A</code>是有虚函数的，所以编译器为其准备了一张虚函数表<code>vtableA</code>。由于<code>h()</code>不是虚函数，所以不在表内。</p>
 <table>
 <thead>
 <tr>
-<th>vtableA</th>
+<th><code>class A</code>的虚函数表</th>
 </tr>
 </thead>
 <tbody>
@@ -419,7 +407,7 @@
 <table>
 <thead>
 <tr>
-<th>vtableB</th>
+<th><code>class B</code>的虚函数表</th>
 </tr>
 </thead>
 <tbody>
@@ -431,17 +419,20 @@
 </tr>
 </tbody>
 </table>
-<p>因为<code>class B</code>没有重写<code>f()</code>,所以vtableB中的第一项继承自vtableA的第一项；<code>class B</code>重写了<code>g()</code>,所以vtableB中的第二项是<code>B::g()</code>的地址。</p>
+<p>因为<code>class B</code>没有重写<code>f()</code>,所以<code>vtableB</code>中的第一项继承自<code>vtableA</code>的第一项；<code>class B</code>重写了<code>g()</code>,所以<code>vtableB</code>中的第二项是<code>B::g()</code>的地址。</p>
 <p>当我们实例化一个<code>class B</code>对象b的时候，</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B b;</span><br></pre></td></tr></table></figure>
-<p>编译器为其分配了</p>
+<p>编译器为其分配了如下项目</p>
 <table>
 <thead>
 <tr>
-<th>vptr ： 指向B的虚表vtableB</th>
+<th><code>b</code>的内存分布</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>vptr</code> ： 指向<code>class B</code>的虚表<code>vtableB</code></td>
+</tr>
 <tr>
 <td><code>int a</code>:继承自<code>class A</code></td>
 </tr>
@@ -452,7 +443,7 @@
 </table>
 <p>当基类指针指向派生类的时候，</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A* pa = &amp;b;</span><br><span class="line">pa-&gt;g();</span><br></pre></td></tr></table></figure>
-<p>编译器仍然认为<code>pa</code>是指向<code>class A</code>的指针，<code>pa</code>只能访问<code>b</code>的前两项，也就是继承自<code>class A</code>的那一部分。当执行<code>pa-&gt;g();</code> 的时候，编译器还是“笨笨”地调用虚函数表中的第二项，而此时虚函数表中的第二项以及成为了<code>B::g()</code>的函数地址，就这样实现了虚函数。</p>
+<p>编译器仍然认为<code>pa</code>是指向<code>class A</code>的指针，<code>pa</code>只能访问<code>b</code>的前两项，也就是继承自<code>class A</code>的那一部分。当执行<code>pa-&gt;g();</code> 的时候，编译器还是“笨笨”地调用虚函数表中的第二项，而此时虚函数表中的第二项以及成为了<code>B::g()</code>的函数地址，所以就会调用<code>B::g()</code>，就这样实现了虚函数。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对虚函数我们仍然只有一个感性的认识，我们还是有很多不了解的地方。譬如类的虚函数表是放在哪里的？对象的虚指针放在哪里？虚指针的空间效率问题等等。但是有了这样一个感性的认识，对接下里的深入理解会有很大的帮助。（虽然更多的是心理因素O(∩_∩)O）</p>
 
           
@@ -543,6 +534,19 @@
 
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
               
             </nav>
           
