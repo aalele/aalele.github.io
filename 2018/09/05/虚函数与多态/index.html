@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="虚函数与多态多态（polymorphism)一词源自希腊语，意为多种形态，多种形状。 举个例子，同样的一个求面积公式，对正方形而言，其形式为边长^2^；对圆而言，其形式为&amp;pi;半径^2^。“求面积”这一动作，在不同的几何体上有不同的形态。这就是我理解的多态。 譬如，有一个名叫Shape的类，分别派生出Rectangle类以及Triangle类。 1234567891011121314151617">
+  <meta name="description" content="多态（polymorphism)一词源自希腊语，意为多种形态，多种形状。 举个例子，同样的一个求面积公式，对正方形而言，其形式为边长^2^；对圆而言，其形式为&amp;pi;半径^2^。“求面积”这一动作，在不同的几何体上有不同的形态。这就是我理解的多态。 譬如，有一个名叫Shape的类，分别派生出Rectangle类以及Triangle类。 1234567891011121314151617181920">
 <meta name="keywords" content="虚函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="虚函数与多态">
 <meta property="og:url" content="http://yoursite.com/2018/09/05/虚函数与多态/index.html">
 <meta property="og:site_name" content="我是 刘理铖">
-<meta property="og:description" content="虚函数与多态多态（polymorphism)一词源自希腊语，意为多种形态，多种形状。 举个例子，同样的一个求面积公式，对正方形而言，其形式为边长^2^；对圆而言，其形式为&amp;pi;半径^2^。“求面积”这一动作，在不同的几何体上有不同的形态。这就是我理解的多态。 譬如，有一个名叫Shape的类，分别派生出Rectangle类以及Triangle类。 1234567891011121314151617">
+<meta property="og:description" content="多态（polymorphism)一词源自希腊语，意为多种形态，多种形状。 举个例子，同样的一个求面积公式，对正方形而言，其形式为边长^2^；对圆而言，其形式为&amp;pi;半径^2^。“求面积”这一动作，在不同的几何体上有不同的形态。这就是我理解的多态。 譬如，有一个名叫Shape的类，分别派生出Rectangle类以及Triangle类。 1234567891011121314151617181920">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-05T03:10:09.622Z">
+<meta property="og:updated_time" content="2018-09-05T03:12:32.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="虚函数与多态">
-<meta name="twitter:description" content="虚函数与多态多态（polymorphism)一词源自希腊语，意为多种形态，多种形状。 举个例子，同样的一个求面积公式，对正方形而言，其形式为边长^2^；对圆而言，其形式为&amp;pi;半径^2^。“求面积”这一动作，在不同的几何体上有不同的形态。这就是我理解的多态。 譬如，有一个名叫Shape的类，分别派生出Rectangle类以及Triangle类。 1234567891011121314151617">
+<meta name="twitter:description" content="多态（polymorphism)一词源自希腊语，意为多种形态，多种形状。 举个例子，同样的一个求面积公式，对正方形而言，其形式为边长^2^；对圆而言，其形式为&amp;pi;半径^2^。“求面积”这一动作，在不同的几何体上有不同的形态。这就是我理解的多态。 譬如，有一个名叫Shape的类，分别派生出Rectangle类以及Triangle类。 1234567891011121314151617181920">
 
 
 
@@ -335,7 +335,7 @@
                 
               
 
-              <time title="创建时间：2018-09-05 11:01:47 / 修改时间：11:10:09" itemprop="dateCreated datePublished" datetime="2018-09-05T11:01:47+08:00">2018-09-05</time>
+              <time title="创建时间：2018-09-05 11:01:47 / 修改时间：11:12:32" itemprop="dateCreated datePublished" datetime="2018-09-05T11:01:47+08:00">2018-09-05</time>
             
 
             
@@ -373,7 +373,7 @@
       
 
       
-        <h1 id="虚函数与多态"><a href="#虚函数与多态" class="headerlink" title="虚函数与多态"></a>虚函数与多态</h1><p>多态（<em>polymorphism</em>)一词源自希腊语，意为多种形态，多种形状。</p>
+        <p>多态（<em>polymorphism</em>)一词源自希腊语，意为多种形态，多种形状。</p>
 <p>举个例子，同样的一个求面积公式，对正方形而言，其形式为边长^2^；对圆而言，其形式为&pi;半径^2^。“求面积”这一动作，在不同的几何体上有不同的形态。这就是我理解的多态。</p>
 <p>譬如，有一个名叫<code>Shape</code>的类，分别派生出<code>Rectangle</code>类以及<code>Triangle</code>类。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Shape</span> &#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">area</span><span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Parent class area :"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span>:</span> <span class="keyword">public</span> Shape&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">area</span><span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Rectangle class area :"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Triangle</span>:</span> <span class="keyword">public</span> Shape&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">area</span> <span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123; </span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Triangle class area :"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -473,6 +473,22 @@
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/10/薄荷糖与凉/" rel="prev" title="薄荷糖与凉">
+                薄荷糖与凉 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
       
@@ -538,7 +554,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -555,7 +571,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
@@ -591,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#虚函数与多态"><span class="nav-number">1.</span> <span class="nav-text">虚函数与多态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么非要虚函数"><span class="nav-number">1.1.</span> <span class="nav-text">为什么非要虚函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚函数的实现机制"><span class="nav-number">1.2.</span> <span class="nav-text">虚函数的实现机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么非要虚函数"><span class="nav-number">1.</span> <span class="nav-text">为什么非要虚函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚函数的实现机制"><span class="nav-number">2.</span> <span class="nav-text">虚函数的实现机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
