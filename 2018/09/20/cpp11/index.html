@@ -108,20 +108,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我是 刘理铖">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="这是我在面试中被频繁问到的问题（IBM），我觉得或许有必要罗列一下。 Lambda 表达式Lambda 表达式典型的使用场景也许是这样的：你突然想要用某一个非常简单的函数，你又不想要在函数体之外定义这个函数，那么你可以直接利用 Lambda 表达式来定义。表达式的简单语法如下，   [capture](parameters)-&amp;gt;return_type {body}  一个来自    Dann">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++11 标准新特性">
+<meta property="og:url" content="http://yoursite.com/2018/09/20/cpp11/index.html">
 <meta property="og:site_name" content="我是 刘理铖">
+<meta property="og:description" content="这是我在面试中被频繁问到的问题（IBM），我觉得或许有必要罗列一下。 Lambda 表达式Lambda 表达式典型的使用场景也许是这样的：你突然想要用某一个非常简单的函数，你又不想要在函数体之外定义这个函数，那么你可以直接利用 Lambda 表达式来定义。表达式的简单语法如下，   [capture](parameters)-&amp;gt;return_type {body}  一个来自    Dann">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-20T16:30:31.432Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我是 刘理铖">
+<meta name="twitter:title" content="C++11 标准新特性">
+<meta name="twitter:description" content="这是我在面试中被频繁问到的问题（IBM），我觉得或许有必要罗列一下。 Lambda 表达式Lambda 表达式典型的使用场景也许是这样的：你突然想要用某一个非常简单的函数，你又不想要在函数体之外定义这个函数，那么你可以直接利用 Lambda 表达式来定义。表达式的简单语法如下，   [capture](parameters)-&amp;gt;return_type {body}  一个来自    Dann">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/20/cpp11/"/>
 
 
 
@@ -131,7 +136,7 @@
   };
 </script>
 
-  <title>我是 刘理铖</title>
+  <title>C++11 标准新特性 | 我是 刘理铖</title>
   
 
 
@@ -178,8 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -220,7 +224,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
   </li>
@@ -272,9 +276,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -306,11 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/20/cpp11/" itemprop="url">
-                  C++11 标准新特性
-                </a>
+          <h1 class="post-title" itemprop="name headline">C++11 标准新特性
               
             
           </h1>
@@ -385,9 +385,7 @@
       
 
       
-        
-          
-            <p>这是我在面试中被频繁问到的问题（IBM），我觉得或许有必要罗列一下。</p>
+        <p>这是我在面试中被频繁问到的问题（IBM），我觉得或许有必要罗列一下。</p>
 <h1 id="Lambda-表达式"><a href="#Lambda-表达式" class="headerlink" title="Lambda 表达式"></a>Lambda 表达式</h1><p>Lambda 表达式典型的使用场景也许是这样的：你突然想要用某一个非常简单的函数，你又不想要在函数体之外定义这个函数，那么你可以直接利用 Lambda 表达式来定义。表达式的简单语法如下，</p>
 <blockquote>
 <p> [capture](parameters)-&gt;return_type {body}</p>
@@ -439,8 +437,6 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">constexpr</span> <span class="keyword">int</span> <span class="title">GetFive</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> <span class="number">5</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> some_value[GetFive() + <span class="number">7</span>];</span><br></pre></td></tr></table></figure>
 <p>编译器只是会尝试着去了解并去验证<code>GetFive</code>是个编译期常量。</p>
 <h1 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h1>
-          
-        
       
     </div>
 
@@ -458,318 +454,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/19/process/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘理铖">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我是 刘理铖">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/19/process/" itemprop="url">
-                  理解进程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-19 10:37:27" itemprop="dateCreated datePublished" datetime="2018-09-19T10:37:27+08:00">2018-09-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-09-20 21:40:24" itemprop="dateModified" datetime="2018-09-20T21:40:24+08:00">2018-09-20</time>
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/C/" rel="tag"># C++</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这是一个经典的操作系统问题：什么是进程（<em>process</em>）？<a href="https://en.wikipedia.org/wiki/Process_(computing" target="_blank" rel="noopener">维基百科</a>)说：进程是计算机中已运行程序的实体。我觉得这依旧是一个抽象的回答，我依旧无法在脑中将进程与现实里的任何事物对应。</p>
-<p>后来我看到了某一种解释：</p>
-<blockquote>
-<p>进程和线程都是一个时间段的描述，是CPU工作时间段的描述。</p>
-</blockquote>
-<p>我觉得十分有收获。或许我们一直不应该从“空间”的角度去理解进程，它不是任何所谓“实体”，而仅仅只是对CPU工作的一段时间的描述罢了。</p>
-<p>​    在最开始，“进程”一词的确很形象很恰当，但是久而久之，我认为这对初学者的理解反而起到了阻碍作用。抽象有利于知识的传播，却不利于知识的理解。很多教材的编撰者是以一种平铺直叙的方式来解释各种术语。也许是精力有限，也许是他们忘记了自己作为初学者时的困惑，甚至也许是他们自己从来也没有明白过各种概念，只知道在各种场合之下抛出合理的词汇。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/menthol/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘理铖">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我是 刘理铖">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/10/menthol/" itemprop="url">
-                  薄荷糖与凉
-                </a>
-              
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/2018/09/19/process/" rel="next" title="理解进程">
+                <i class="fa fa-chevron-left"></i> 理解进程
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-10 16:39:34 / 修改时间：16:44:02" itemprop="dateCreated datePublished" datetime="2018-09-10T16:39:34+08:00">2018-09-10</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>每天中午刚从闷热的室外进入教室的时候，我会嚼上两粒薄荷糖，接着喝口水，顿时感到十分清凉。事实上，周围的温度没有降低，为什么我会有这样的感觉？</p>
-<h1 id="薄荷醇"><a href="#薄荷醇" class="headerlink" title="薄荷醇"></a>薄荷醇</h1><p>薄荷糖之所以让我感到清凉是因为其中的薄荷醇。维基百科对此的解释是</p>
-<blockquote>
-<p>食用、吸入或皮肤接触薄荷醇会带来冷却感，这是由于薄荷醇是一种<a href="https://zh.wikipedia.org/wiki/TRPM8" target="_blank" rel="noopener"><code>TRPM8</code></a>激动剂，它会活化<code>TRPM8</code>通道并允许钠离子、钾离子、铯离子和钙离子进入细胞内，这导致细胞的去极化以及产生一个动作电位，并最终将导致生物感受到冷的感觉。</p>
-</blockquote>
-<p>在这里，<code>TRMP8</code>是一种离子通道，是一种蛋白质。它会被薄荷醇激活，也会在温度低于26度的时候被激活。薄荷醇通过买通离子通道的手段成功欺骗了我们的大脑。这有点像欺骗缸中之脑的刺激。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zh.wikipedia.org/wiki/%E8%96%84%E8%8D%B7%E9%86%87" target="_blank" rel="noopener">薄荷醇 -维基百科</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -779,235 +493,15 @@
   </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/05/virtual-function-and-polymorphism/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘理铖">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我是 刘理铖">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/05/virtual-function-and-polymorphism/" itemprop="url">
-                  虚函数与多态
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-05 11:01:47" itemprop="dateCreated datePublished" datetime="2018-09-05T11:01:47+08:00">2018-09-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-09-19 10:11:15" itemprop="dateModified" datetime="2018-09-19T10:11:15+08:00">2018-09-19</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>多态（<em>polymorphism</em>)一词源自希腊语，意为多种形态，多种形状。</p>
-<p>举个例子，同样的一个求面积公式，对正方形而言，其形式为边长^2^；对圆而言，其形式为&pi;半径^2^。“求面积”这一动作，在不同的几何体上有不同的形态。这就是我理解的多态。</p>
-<p>譬如，有一个名叫<code>Shape</code>的类，分别派生出<code>Rectangle</code>类以及<code>Triangle</code>类。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Shape</span> &#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">area</span><span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Parent class area :"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span>:</span> <span class="keyword">public</span> Shape&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">area</span><span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Rectangle class area :"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Triangle</span>:</span> <span class="keyword">public</span> Shape&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">area</span> <span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123; </span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Triangle class area :"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>可以看到它们各自都有一个<code>area()</code>函数。这些函数的函数体是<strong>不同</strong>的。在这个时候，我们仍然没有使用虚函数的必要。</p>
-<h2 id="为什么非要虚函数"><a href="#为什么非要虚函数" class="headerlink" title="为什么非要虚函数"></a>为什么非要虚函数</h2><p>可是，假如我们有这样一个需求。我们需要一个数组，一个可以同时容纳<code>Rectangle</code>以及<code>Triangle</code>的数组，我们该怎么办？无论是<code>vector</code>还是C中的数组，都要求元素类型相同。所以，换一种思路，我们可以容纳<code>Shape</code>的指针。这样，通过指针指向具体的派生类就可以间接实现我们的目标。看上去很完美。但是倘若我们要计算数组内几何体的面积，我们该怎么办？我们只有一系列的<code>Shape</code>指针，我们不知道这些指针是指向<code>Rectangle</code>还是<code>Triangle</code>，如果我们直接通过<code>Shape</code>指针调用<code>area()</code>,尴尬的地方在于它只会调用<code>Shape</code>类的<code>area()</code>。这是因为编译器想当然地认为<code>Shape</code>指针指向的肯定是<code>Shape</code>类，所以自然而然地就会调用<code>Shape</code>类的<code>area()</code>。</p>
-<p>这个时候，虚函数粉墨登场了。只需要在<code>Shape</code>类中的<code>area()</code>函数定义之前加上<code>virtual</code>关键字，<code>area()</code>就成为了虚函数。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Shape</span> &#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">area</span><span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Parent class area :"</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>再回过头来看，就会发现，编译器很聪明地知道了<code>Shape</code>指针指向的是<code>Rectangle</code>类还是<code>Triangle</code>，随即调用相应地<code>area()</code>。</p>
-<h2 id="虚函数的实现机制"><a href="#虚函数的实现机制" class="headerlink" title="虚函数的实现机制"></a>虚函数的实现机制</h2><p>在C++中，虚函数的实现机制是虚函数表以及虚指针。</p>
-<p>具体而言，每一个拥有虚函数的类及其子类都有一张虚函数表，该虚函数表为该些类通用；每一个该些类的对象都一个虚指针指向这张表，该虚指针为该对象独有。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">g</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">h</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> a</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> :</span> <span class="keyword">public</span> A</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">g</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> b;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>因为<code>class A</code>是有虚函数的，所以编译器为其准备了一张虚函数表<code>vtableA</code>。由于<code>h()</code>不是虚函数，所以不在表内。</p>
-<table>
-<thead>
-<tr>
-<th><code>class A</code>的虚函数表</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>A::f()</code>的地址</td>
-</tr>
-<tr>
-<td><code>A::g()</code>的地址</td>
-</tr>
-</tbody>
-</table>
-<p>同样的，<code>class B</code>继承了<code>class A</code>，所以编译器也为其准备了一张虚函数表vtableB。</p>
-<table>
-<thead>
-<tr>
-<th><code>class B</code>的虚函数表</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>A::f()</code>的地址</td>
-</tr>
-<tr>
-<td><code>B::g()</code>的地址</td>
-</tr>
-</tbody>
-</table>
-<p>因为<code>class B</code>没有重写<code>f()</code>,所以<code>vtableB</code>中的第一项继承自<code>vtableA</code>的第一项；<code>class B</code>重写了<code>g()</code>,所以<code>vtableB</code>中的第二项是<code>B::g()</code>的地址。</p>
-<p>当我们实例化一个<code>class B</code>对象b的时候，</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B b;</span><br></pre></td></tr></table></figure>
-<p>编译器为其分配了如下项目</p>
-<table>
-<thead>
-<tr>
-<th><code>b</code>的内存分布</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>vptr</code> ： 指向<code>class B</code>的虚表<code>vtableB</code></td>
-</tr>
-<tr>
-<td><code>int a</code>:继承自<code>class A</code></td>
-</tr>
-<tr>
-<td><code>int b</code>:<code>class B</code>的成员变量</td>
-</tr>
-</tbody>
-</table>
-<p>当基类指针指向派生类的时候，</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A* pa = &amp;b;</span><br><span class="line">pa-&gt;g();</span><br></pre></td></tr></table></figure>
-<p>编译器仍然认为<code>pa</code>是指向<code>class A</code>的指针，<code>pa</code>只能访问<code>b</code>的前两项，也就是继承自<code>class A</code>的那一部分。当执行<code>pa-&gt;g();</code> 的时候，编译器还是“笨笨”地调用虚函数表中的第二项，而此时虚函数表中的第二项以及成为了<code>B::g()</code>的函数地址，所以就会调用<code>B::g()</code>，就这样实现了虚函数。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对虚函数我们仍然只有一个感性的认识，我们还是有很多不了解的地方。譬如类的虚函数表是放在哪里的？对象的虚指针放在哪里？虚指针的空间效率问题等等。但是有了这样一个感性的认识，对接下里的深入理解会有很大的帮助。（虽然更多的是心理因素O(∩_∩)O）</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -1028,8 +522,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1093,6 +596,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lambda-表达式"><span class="nav-number">1.</span> <span class="nav-text">Lambda 表达式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自动类型推导"><span class="nav-number">2.</span> <span class="nav-text">自动类型推导</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#auto"><span class="nav-number">2.1.</span> <span class="nav-text">auto</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deltype"><span class="nav-number">2.2.</span> <span class="nav-text">deltype</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#统一的初始化语法"><span class="nav-number">3.</span> <span class="nav-text">统一的初始化语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Delete-和-Default-函数"><span class="nav-number">4.</span> <span class="nav-text">Delete 和 Default 函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nullptr"><span class="nav-number">5.</span> <span class="nav-text">nullptr</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#右值引用和move语义"><span class="nav-number">6.</span> <span class="nav-text">右值引用和move语义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#constexpr"><span class="nav-number">7.</span> <span class="nav-text">constexpr</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#智能指针"><span class="nav-number">8.</span> <span class="nav-text">智能指针</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1230,6 +749,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
