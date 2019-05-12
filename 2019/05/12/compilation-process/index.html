@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="每天中午刚从闷热的室外进入教室的时候，我会嚼上两粒薄荷糖，接着喝口水，顿时感到十分清凉。事实上，周围的温度没有降低，为什么我会有这样的感觉？ 薄荷醇薄荷糖之所以让我感到清凉是因为其中的薄荷醇。维基百科对此的解释是  食用、吸入或皮肤接触薄荷醇会带来冷却感，这是由于薄荷醇是一种TRPM8激动剂，它会活化TRPM8通道并允许钠离子、钾离子、铯离子和钙离子进入细胞内，这导致细胞的去极化以及产生一个动作电">
-<meta name="keywords" content="胡思乱想">
+  <meta name="description" content="写在前面：本文是How does the compilation/linking process work?高票回答的翻译。有能力的读者建议阅读原文。 C++的编译（compilation）过程包括三个步骤：  预处理（Preprocessing）：预处理器拿到C++的源码，处理类似#include，#define以及其他的预处理指令。这一部分的输出是所谓没有预处理指令的“纯C++文件”。 编译（">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="薄荷糖与凉">
-<meta property="og:url" content="http://yoursite.com/2018/09/10/menthol/index.html">
+<meta property="og:title" content="C++的编译过程">
+<meta property="og:url" content="http://yoursite.com/2019/05/12/compilation-process/index.html">
 <meta property="og:site_name" content="我是 刘理铖">
-<meta property="og:description" content="每天中午刚从闷热的室外进入教室的时候，我会嚼上两粒薄荷糖，接着喝口水，顿时感到十分清凉。事实上，周围的温度没有降低，为什么我会有这样的感觉？ 薄荷醇薄荷糖之所以让我感到清凉是因为其中的薄荷醇。维基百科对此的解释是  食用、吸入或皮肤接触薄荷醇会带来冷却感，这是由于薄荷醇是一种TRPM8激动剂，它会活化TRPM8通道并允许钠离子、钾离子、铯离子和钙离子进入细胞内，这导致细胞的去极化以及产生一个动作电">
+<meta property="og:description" content="写在前面：本文是How does the compilation/linking process work?高票回答的翻译。有能力的读者建议阅读原文。 C++的编译（compilation）过程包括三个步骤：  预处理（Preprocessing）：预处理器拿到C++的源码，处理类似#include，#define以及其他的预处理指令。这一部分的输出是所谓没有预处理指令的“纯C++文件”。 编译（">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-10T08:44:02.667Z">
+<meta property="og:updated_time" content="2019-05-12T11:15:02.319Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="薄荷糖与凉">
-<meta name="twitter:description" content="每天中午刚从闷热的室外进入教室的时候，我会嚼上两粒薄荷糖，接着喝口水，顿时感到十分清凉。事实上，周围的温度没有降低，为什么我会有这样的感觉？ 薄荷醇薄荷糖之所以让我感到清凉是因为其中的薄荷醇。维基百科对此的解释是  食用、吸入或皮肤接触薄荷醇会带来冷却感，这是由于薄荷醇是一种TRPM8激动剂，它会活化TRPM8通道并允许钠离子、钾离子、铯离子和钙离子进入细胞内，这导致细胞的去极化以及产生一个动作电">
+<meta name="twitter:title" content="C++的编译过程">
+<meta name="twitter:description" content="写在前面：本文是How does the compilation/linking process work?高票回答的翻译。有能力的读者建议阅读原文。 C++的编译（compilation）过程包括三个步骤：  预处理（Preprocessing）：预处理器拿到C++的源码，处理类似#include，#define以及其他的预处理指令。这一部分的输出是所谓没有预处理指令的“纯C++文件”。 编译（">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/10/menthol/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/05/12/compilation-process/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>薄荷糖与凉 | 我是 刘理铖</title>
+  <title>C++的编译过程 | 我是 刘理铖</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/menthol/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/compilation-process/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘理铖">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">薄荷糖与凉
+          <h1 class="post-title" itemprop="name headline">C++的编译过程
               
             
           </h1>
@@ -335,7 +335,7 @@
                 
               
 
-              <time title="创建时间：2018-09-10 16:39:34 / 修改时间：16:44:02" itemprop="dateCreated datePublished" datetime="2018-09-10T16:39:34+08:00">2018-09-10</time>
+              <time title="创建时间：2019-05-12 15:32:36 / 修改时间：19:15:02" itemprop="dateCreated datePublished" datetime="2019-05-12T15:32:36+08:00">2019-05-12</time>
             
 
             
@@ -373,13 +373,25 @@
       
 
       
-        <p>每天中午刚从闷热的室外进入教室的时候，我会嚼上两粒薄荷糖，接着喝口水，顿时感到十分清凉。事实上，周围的温度没有降低，为什么我会有这样的感觉？</p>
-<h1 id="薄荷醇"><a href="#薄荷醇" class="headerlink" title="薄荷醇"></a>薄荷醇</h1><p>薄荷糖之所以让我感到清凉是因为其中的薄荷醇。维基百科对此的解释是</p>
-<blockquote>
-<p>食用、吸入或皮肤接触薄荷醇会带来冷却感，这是由于薄荷醇是一种<a href="https://zh.wikipedia.org/wiki/TRPM8" target="_blank" rel="noopener"><code>TRPM8</code></a>激动剂，它会活化<code>TRPM8</code>通道并允许钠离子、钾离子、铯离子和钙离子进入细胞内，这导致细胞的去极化以及产生一个动作电位，并最终将导致生物感受到冷的感觉。</p>
-</blockquote>
-<p>在这里，<code>TRMP8</code>是一种离子通道，是一种蛋白质。它会被薄荷醇激活，也会在温度低于26度的时候被激活。薄荷醇通过买通离子通道的手段成功欺骗了我们的大脑。这有点像欺骗缸中之脑的刺激。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zh.wikipedia.org/wiki/%E8%96%84%E8%8D%B7%E9%86%87" target="_blank" rel="noopener">薄荷醇 -维基百科</a></p>
+        <p><strong>写在前面</strong>：本文是<a href="https://stackoverflow.com/questions/6264249/how-does-the-compilation-linking-process-work" target="_blank" rel="noopener">How does the compilation/linking process work?</a>高票回答的翻译。有能力的读者建议阅读原文。</p>
+<p>C++的编译（compilation）过程包括三个步骤：</p>
+<ol>
+<li>预处理（Preprocessing）：预处理器拿到C++的源码，处理类似<code>#include</code>，<code>#define</code>以及其他的预处理指令。这一部分的输出是所谓没有预处理指令的“纯C++文件”。</li>
+<li>编译（compilation）：编译器拿到预处理器的输出并生成目标文件。</li>
+<li>链接（Linking）：链接器拿到编译器产生的目标文件并生成库文件或者可执行文件。</li>
+</ol>
+<h1 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h1><p>预处理器需要解决的是类似<code>#include</code>以及<code>#define</code>这一类预处理指令。预处理指令与C++的语法无关，这也是必须谨慎使用它们的原因。</p>
+<p>预处理器一次只能处理一个C++源文件。用相应文件中的内容（通常只是声明）去替换<code>#include</code>，宏替换（<code>#define</code>）以及根据<code>#if</code>, <code>#ifdef</code> 还有<code>#ifndef</code>来选择文本的不同部分。</p>
+<p>预处理器利用一系列<a href="https://www.geeksforgeeks.org/cc-tokens/" target="_blank" rel="noopener">token</a>来工作。（The preprocessor works on a stream of preprocessing tokens.）例如，宏替换被定义为用一个token替换另一个token（操作符<code>##</code>是合并两个token）。</p>
+<p>之后，预处理器就根据上述的变换产生token流。它还添加了一些特殊的标记，告诉编译器每行代码的来源，以便编译器产生正确的错误消息。</p>
+<h1 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h1><p>编译阶段是作用在预处理阶段的输出上。编译器解析纯C++源代码（没有任何的预处理指令）并将其转换为汇编代码。然后调用底层后端（工具链中的汇编器）将代码汇编成机器代码，生成某种格式的实际二进制文件（EOF，COFF，a,out，…）。此目标文件包含输入中定义的符号的已编译代码（以二进制形式）。目标文件中的符号通过名称来引用。（This object file contains the compiled code (in binary form) of the symbols defined in the input. Symbols in object files are referred to by name.）</p>
+<p>目标文件可以引用未定义的符号，当你仅声明但没有定义的时候就是这样的情况。编译器不介意这一点，只要源代码格式正确，编译器就会愉快地生成目标文件。</p>
+<p>我们可以单独编译每个源代码文件。这样的好处是，如果只更改一个文件，就无需重新编译所有的内容。</p>
+<p>生成的目标文件可以放在称为静态库的特殊存档中，以便以后重用。</p>
+<p>这个阶段就会产生我们工作中最常见的那一类编译错误，比如语法错误或重载解析错误等等。</p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p>链接器从目标文件中生成最终的编译输出。这个输出可以是动态库（虽然名字很相似但是动态库和我们之前提到的静态库没有多少共同之处），也可以是可执行文件。</p>
+<p>它通过用正确的地址替换未定义的符号引用来链接所有目标文件。这些符号可以在其他目标文件或者是库中（如果不是标准库就要告知链接器）定义。</p>
+<p>这一阶段最常见的错误是缺少定义或重复定义。前者意味着定义不存在（即它们没有被写入），或者定义所在目标文件或库没有被告知链接器。后者很明显：在两个不同的目标文件或库中定义了相同的符号。</p>
 
       
     </div>
@@ -400,7 +412,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/胡思乱想/" rel="tag"># 胡思乱想</a>
+            <a href="/tags/C/" rel="tag"># C++</a>
           
         </div>
       
@@ -413,8 +425,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/05/virtual-function-and-polymorphism/" rel="next" title="虚函数与多态">
-                <i class="fa fa-chevron-left"></i> 虚函数与多态
+              <a href="/2019/01/01/love/" rel="next" title="L.O.V.E">
+                <i class="fa fa-chevron-left"></i> L.O.V.E
               </a>
             
           </div>
@@ -422,10 +434,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/19/process/" rel="prev" title="理解进程">
-                理解进程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -554,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#薄荷醇"><span class="nav-number">1.</span> <span class="nav-text">薄荷醇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#预处理"><span class="nav-number">1.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译"><span class="nav-number">2.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接"><span class="nav-number">3.</span> <span class="nav-text">链接</span></a></li></ol></div>
             
 
           </div>

@@ -289,6 +289,306 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/compilation-process/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘理铖">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是 刘理铖">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/12/compilation-process/" itemprop="url">
+                  C++的编译过程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-12 15:32:36 / 修改时间：19:15:02" itemprop="dateCreated datePublished" datetime="2019-05-12T15:32:36+08:00">2019-05-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>写在前面</strong>：本文是<a href="https://stackoverflow.com/questions/6264249/how-does-the-compilation-linking-process-work" target="_blank" rel="noopener">How does the compilation/linking process work?</a>高票回答的翻译。有能力的读者建议阅读原文。</p>
+<p>C++的编译（compilation）过程包括三个步骤：</p>
+<ol>
+<li>预处理（Preprocessing）：预处理器拿到C++的源码，处理类似<code>#include</code>，<code>#define</code>以及其他的预处理指令。这一部分的输出是所谓没有预处理指令的“纯C++文件”。</li>
+<li>编译（compilation）：编译器拿到预处理器的输出并生成目标文件。</li>
+<li>链接（Linking）：链接器拿到编译器产生的目标文件并生成库文件或者可执行文件。</li>
+</ol>
+<h1 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h1><p>预处理器需要解决的是类似<code>#include</code>以及<code>#define</code>这一类预处理指令。预处理指令与C++的语法无关，这也是必须谨慎使用它们的原因。</p>
+<p>预处理器一次只能处理一个C++源文件。用相应文件中的内容（通常只是声明）去替换<code>#include</code>，宏替换（<code>#define</code>）以及根据<code>#if</code>, <code>#ifdef</code> 还有<code>#ifndef</code>来选择文本的不同部分。</p>
+<p>预处理器利用一系列<a href="https://www.geeksforgeeks.org/cc-tokens/" target="_blank" rel="noopener">token</a>来工作。（The preprocessor works on a stream of preprocessing tokens.）例如，宏替换被定义为用一个token替换另一个token（操作符<code>##</code>是合并两个token）。</p>
+<p>之后，预处理器就根据上述的变换产生token流。它还添加了一些特殊的标记，告诉编译器每行代码的来源，以便编译器产生正确的错误消息。</p>
+<h1 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h1><p>编译阶段是作用在预处理阶段的输出上。编译器解析纯C++源代码（没有任何的预处理指令）并将其转换为汇编代码。然后调用底层后端（工具链中的汇编器）将代码汇编成机器代码，生成某种格式的实际二进制文件（EOF，COFF，a,out，…）。此目标文件包含输入中定义的符号的已编译代码（以二进制形式）。目标文件中的符号通过名称来引用。（This object file contains the compiled code (in binary form) of the symbols defined in the input. Symbols in object files are referred to by name.）</p>
+<p>目标文件可以引用未定义的符号，当你仅声明但没有定义的时候就是这样的情况。编译器不介意这一点，只要源代码格式正确，编译器就会愉快地生成目标文件。</p>
+<p>我们可以单独编译每个源代码文件。这样的好处是，如果只更改一个文件，就无需重新编译所有的内容。</p>
+<p>生成的目标文件可以放在称为静态库的特殊存档中，以便以后重用。</p>
+<p>这个阶段就会产生我们工作中最常见的那一类编译错误，比如语法错误或重载解析错误等等。</p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p>链接器从目标文件中生成最终的编译输出。这个输出可以是动态库（虽然名字很相似但是动态库和我们之前提到的静态库没有多少共同之处），也可以是可执行文件。</p>
+<p>它通过用正确的地址替换未定义的符号引用来链接所有目标文件。这些符号可以在其他目标文件或者是库中（如果不是标准库就要告知链接器）定义。</p>
+<p>这一阶段最常见的错误是缺少定义或重复定义。前者意味着定义不存在（即它们没有被写入），或者定义所在目标文件或库没有被告知链接器。后者很明显：在两个不同的目标文件或库中定义了相同的符号。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/01/love/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘理铖">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我是 刘理铖">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/01/love/" itemprop="url">
+                  L.O.V.E
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-01 14:14:13 / 修改时间：14:37:46" itemprop="dateCreated datePublished" datetime="2019-01-01T14:14:13+08:00">2019-01-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>​    人的一生总是伴随着恐惧。所以你想花多少时间在患得患失上？真正重要的事情总是发生在当下。你该如何奉献自己？你的天赋又能为世界带来什么？这是你需要想清楚的事情。</p>
+<p>​    虽然一定有个人做过你想要做的事情，也总会有个人做的比你还要好，但真正有价值的是你的所作所为对他人的影响。无论你拥有了多少，脑海里始终有一个声音会告诉你，不要停下，知道这个世界永远记住我。</p>
+<p>​    </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/four-years-passing-by/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1218,7 +1518,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1281,7 +1581,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
