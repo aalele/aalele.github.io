@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="这是一个经典的操作系统问题：什么是进程（process）？维基百科)说：进程是计算机中已运行程序的实体。我觉得这依旧是一个抽象的回答，我依旧无法在脑中将进程与现实里的任何事物对应。 后来我看到了某一种解释：  进程和线程都是一个时间段的描述，是CPU工作时间段的描述。  我觉得十分有收获。或许我们一直不应该从“空间”的角度去理解进程，它不是任何所谓“实体”，而仅仅只是对CPU工作的一段时间的描述罢">
-<meta name="keywords" content="Linux">
+  <meta name="description" content="写在前面：之前我们在一篇文章中提到过，从你写的源代码到你运行的可执行文件，一共有三个步骤。其中之一就是链接。我们经常会听到类似动态链接，静态链接这类术语。我通过查阅资料来简单回答一下这个问题。  将文件静态链接到可执行文件时，该文件的内容会在链接时，与汇编代码一同被包含在可执行文件中。换句话说，文件的内容将插入到您将运行的可执行文件中，真正意义（physically ）上的插入。 将文件动态链接到">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解进程">
-<meta property="og:url" content="http://yoursite.com/2018/09/19/process/index.html">
+<meta property="og:title" content="动态链接和静态链接">
+<meta property="og:url" content="http://yoursite.com/2019/05/12/Dynamic-Link-and-Static-Link/index.html">
 <meta property="og:site_name" content="我是 刘理铖">
-<meta property="og:description" content="这是一个经典的操作系统问题：什么是进程（process）？维基百科)说：进程是计算机中已运行程序的实体。我觉得这依旧是一个抽象的回答，我依旧无法在脑中将进程与现实里的任何事物对应。 后来我看到了某一种解释：  进程和线程都是一个时间段的描述，是CPU工作时间段的描述。  我觉得十分有收获。或许我们一直不应该从“空间”的角度去理解进程，它不是任何所谓“实体”，而仅仅只是对CPU工作的一段时间的描述罢">
+<meta property="og:description" content="写在前面：之前我们在一篇文章中提到过，从你写的源代码到你运行的可执行文件，一共有三个步骤。其中之一就是链接。我们经常会听到类似动态链接，静态链接这类术语。我通过查阅资料来简单回答一下这个问题。  将文件静态链接到可执行文件时，该文件的内容会在链接时，与汇编代码一同被包含在可执行文件中。换句话说，文件的内容将插入到您将运行的可执行文件中，真正意义（physically ）上的插入。 将文件动态链接到">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-20T13:40:24.218Z">
+<meta property="og:updated_time" content="2019-05-13T06:12:07.760Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理解进程">
-<meta name="twitter:description" content="这是一个经典的操作系统问题：什么是进程（process）？维基百科)说：进程是计算机中已运行程序的实体。我觉得这依旧是一个抽象的回答，我依旧无法在脑中将进程与现实里的任何事物对应。 后来我看到了某一种解释：  进程和线程都是一个时间段的描述，是CPU工作时间段的描述。  我觉得十分有收获。或许我们一直不应该从“空间”的角度去理解进程，它不是任何所谓“实体”，而仅仅只是对CPU工作的一段时间的描述罢">
+<meta name="twitter:title" content="动态链接和静态链接">
+<meta name="twitter:description" content="写在前面：之前我们在一篇文章中提到过，从你写的源代码到你运行的可执行文件，一共有三个步骤。其中之一就是链接。我们经常会听到类似动态链接，静态链接这类术语。我通过查阅资料来简单回答一下这个问题。  将文件静态链接到可执行文件时，该文件的内容会在链接时，与汇编代码一同被包含在可执行文件中。换句话说，文件的内容将插入到您将运行的可执行文件中，真正意义（physically ）上的插入。 将文件动态链接到">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/19/process/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/05/12/Dynamic-Link-and-Static-Link/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>理解进程 | 我是 刘理铖</title>
+  <title>动态链接和静态链接 | 我是 刘理铖</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/19/process/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/Dynamic-Link-and-Static-Link/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘理铖">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">理解进程
+          <h1 class="post-title" itemprop="name headline">动态链接和静态链接
               
             
           </h1>
@@ -335,7 +335,7 @@
                 
               
 
-              <time title="创建时间：2018-09-19 10:37:27" itemprop="dateCreated datePublished" datetime="2018-09-19T10:37:27+08:00">2018-09-19</time>
+              <time title="创建时间：2019-05-12 20:40:37" itemprop="dateCreated datePublished" datetime="2019-05-12T20:40:37+08:00">2019-05-12</time>
             
 
             
@@ -352,7 +352,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-20 21:40:24" itemprop="dateModified" datetime="2018-09-20T21:40:24+08:00">2018-09-20</time>
+                <time title="修改时间：2019-05-13 14:12:07" itemprop="dateModified" datetime="2019-05-13T14:12:07+08:00">2019-05-13</time>
               
             
           </span>
@@ -385,13 +385,24 @@
       
 
       
-        <p>这是一个经典的操作系统问题：什么是进程（<em>process</em>）？<a href="https://en.wikipedia.org/wiki/Process_(computing" target="_blank" rel="noopener">维基百科</a>)说：进程是计算机中已运行程序的实体。我觉得这依旧是一个抽象的回答，我依旧无法在脑中将进程与现实里的任何事物对应。</p>
-<p>后来我看到了某一种解释：</p>
-<blockquote>
-<p>进程和线程都是一个时间段的描述，是CPU工作时间段的描述。</p>
-</blockquote>
-<p>我觉得十分有收获。或许我们一直不应该从“空间”的角度去理解进程，它不是任何所谓“实体”，而仅仅只是对CPU工作的一段时间的描述罢了。</p>
-<p>​    在最开始，“进程”一词的确很形象很恰当，但是久而久之，我认为这对初学者的理解反而起到了阻碍作用。抽象有利于知识的传播，却不利于知识的理解。很多教材的编撰者是以一种平铺直叙的方式来解释各种术语。也许是精力有限，也许是他们忘记了自己作为初学者时的困惑，甚至也许是他们自己从来也没有明白过各种概念，只知道在各种场合之下抛出合理的词汇。</p>
+        <p><strong>写在前面：</strong>之前我们在一篇<a href="http://lyoyoyo.com/2019/05/12/compilation-process/" target="_blank" rel="noopener">文章</a>中提到过，从你写的源代码到你运行的可执行文件，一共有三个步骤。其中之一就是链接。我们经常会听到类似<code>动态链接</code>，<code>静态链接</code>这类术语。我通过查阅<a href="https://stackoverflow.com/questions/311882/what-do-statically-linked-and-dynamically-linked-mean" target="_blank" rel="noopener">资料</a>来简单回答一下这个问题。</p>
+<ul>
+<li>将文件<code>静态链接</code>到可执行文件时，该文件的内容会在链接时，与汇编代码一同被包含在可执行文件中。换句话说，文件的内容将插入到您将运行的可执行文件中，真正意义（physically ）上的插入。</li>
+<li>将文件<code>动态链接</code>到可执行文件时，该文件的内容不会真正的被包含在可执行文件中，取而代之的是指向该文件的指针（例如，文件的文件名）。只有在你真正运行可执行文件的时候才会被包含进来，而且他们只会被加载到内存中，而不是磁盘上。</li>
+</ul>
+<p>从某种意义上说，动态链接推迟了链接这一步骤。还有一种更加推迟的办法，那就是只有当你调用函数的时候才会开始动态链接，而不是运行时。</p>
+<p>静态链接的文件在链接时被“锁定”到可执行文件，因此它们无法改变（当然啦，除非你重新编译）。可执行文件引用的动态链接文件只需更换磁盘上的文件即可更改。这样的话我们无需重新链接代码，就可以更新（第三方库中的）功能；因为每次运行代码的时候，加载程序都会重新链接一遍。</p>
+<p>这样做有好处也有坏处：</p>
+<ul>
+<li>更新和修复bug显得更加容易</li>
+<li>如果更新不兼容，就会使得程序崩溃</li>
+</ul>
+<p>“DLL hell”说的就是这种情况：如果你用一个不兼容的库替换一个动态链接的库，所有有关的应用程序都可能会崩溃。</p>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><p>作为示例，让我们看一下用户编译<code>main.c</code>文件时，分别进行静态链接和动态链接的情况。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Phase     Static                    Dynamic</span><br><span class="line">--------  ----------------------    ------------------------</span><br><span class="line">          +---------+               +---------+</span><br><span class="line">          | main.c  |               | main.c  |</span><br><span class="line">          +---------+               +---------+</span><br><span class="line">Compile........|.........................|...................</span><br><span class="line">          +---------+ +---------+   +---------+ +--------+</span><br><span class="line">          | main.o  | | crtlib  |   | main.o  | | crtimp |</span><br><span class="line">          +---------+ +---------+   +---------+ +--------+</span><br><span class="line">Link...........|..........|..............|...........|.......</span><br><span class="line">               |          |              +-----------+</span><br><span class="line">               |          |              |</span><br><span class="line">          +---------+     |         +---------+ +--------+</span><br><span class="line">          |  main   |-----+         |  main   | | crtdll |</span><br><span class="line">          +---------+               +---------+ +--------+</span><br><span class="line">Load/Run.......|.........................|..........|........</span><br><span class="line">          +---------+               +---------+     |</span><br><span class="line">          | main in |               | main in |-----+</span><br><span class="line">          | memory  |               | memory  |</span><br><span class="line">          +---------+               +---------+</span><br></pre></td></tr></table></figure>
+<p>可以看到，当静态链接的时候，主程序和运行时库在链接的时候链接（You can see in the static case that the main program and C runtime library are linked together at link time）。</p>
+<p>当动态链接时，主程序与C运行时导入库链接。C运行时导入库就类似只是声明了动态库中的内容但没有定义。这样的话即使真正的代码不在，也可以完成链接。</p>
+<p>之后，在程序真正运行的时候，操作系统加载程序才将主程序和DLL的链接起来。</p>
 
       
     </div>
@@ -412,7 +423,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
+            <a href="/tags/C/" rel="tag"># C++</a>
           
         </div>
       
@@ -425,8 +436,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/10/menthol/" rel="next" title="薄荷糖与凉">
-                <i class="fa fa-chevron-left"></i> 薄荷糖与凉
+              <a href="/2019/05/12/compilation-process/" rel="next" title="C++的编译过程">
+                <i class="fa fa-chevron-left"></i> C++的编译过程
               </a>
             
           </div>
@@ -434,10 +445,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/20/cpp11/" rel="prev" title="C++11 标准新特性">
-                C++11 标准新特性 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -482,8 +489,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -547,6 +563,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#例子"><span class="nav-number">1.</span> <span class="nav-text">例子</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
